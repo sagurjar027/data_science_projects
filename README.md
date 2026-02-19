@@ -25,6 +25,7 @@ A collection of end-to-end projects covering Machine Learning, Deep Learning, NL
 - House Price Prediction
 
 ### 🔹 Deep Learning
+- Austic Data Classification
 - Image Classification using CNN
 - Face Mask Detection
 
