@@ -13,21 +13,9 @@ def load_assets():
     try:
         # Loading Models
         rf_model = joblib.load(f"{working_dir}/rf_model.joblib")
-        
-        # --- Scikit-learn Version Mismatch Patch ---
-        try:
-            for estimator in rf_model.estimators_:
-                if not hasattr(estimator, 'monotonic_cst'):
-                    estimator.monotonic_cst = None
-        except AttributeError:
-            pass
-        # -------------------------------------------
-        
         xgb_model = joblib.load(f"{working_dir}/xgb_model.joblib")
         scaler = joblib.load(f"{working_dir}/scaler.joblib")
-        
-        return rf_model, xgb_model, scaler
-    
+        return rf_model, xgb_model, scaler  
     except Exception as e:
         st.error(f"Error loading files: {e}")
         return None, None, None
