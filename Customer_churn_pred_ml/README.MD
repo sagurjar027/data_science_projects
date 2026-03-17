@@ -10,20 +10,8 @@ Customer churn directly impacts revenue. This project helps identify customers l
 
 ---
 
-## 📊 Exploratory Data Analysis (EDA)
-
-### 🔹 Churn Distribution
-![Churn Distribution](images/churn_distribution.png)
-
-### 🔹 Gender vs Churn
-![Gender vs Churn](images/gender_churn.png)
-
-### 🔹 Contract Type vs Churn
-![Contract vs Churn](images/contract_churn.png)
-
-### 🔹 Monthly Charges vs Churn
-![Monthly Charges](images/monthly_charges.png)
-
+## 📊 Exploratory Data Analysis (EDA) please visit
+https://github.com/sagurjar027/data_science_projects/blob/sagurjar027-patch-1/Customer_churn_pred_ml/Classification-%20Telecom%20Churn.ipynb
 ---
 
 ## 🧠 Key Insights
@@ -80,7 +68,44 @@ Instead of default threshold (0.5), **threshold tuning** was applied:
 - ⚙️ Model selection (RF / XGB)  
 - 📊 Probability-based risk classification  
 - 💡 Business recommendations  
-
 ---
 
-## 📂 Project Structure
+
+## 📁 Project Structure
+
+```text
+Customer_churn_pred_ml/
+├── Classification- Telecom Churn.ipynb   # Complete EDA, preprocessing, and model building
+├── app.py                                # Streamlit web application script
+├── Telecom_Churn.csv                     # Raw dataset
+├── requirements.txt                      # Project dependencies
+├── rf_model.joblib                       # Serialized Random Forest model
+├── xgb_model.joblib                      # Serialized XGBoost model
+├── scaler.joblib                         # Saved data scaler for preprocessing
+├── data                                  # Additional data artifacts
+└── README.MD                             # Project documentation
+
+
+1. Clone the repository and navigate to the project directory:
+
+Bash
+git clone [https://github.com/sagurjar027/data_science_projects.git](https://github.com/sagurjar027/data_science_projects.git)
+cd data_science_projects/Customer_churn_pred_ml
+
+2. Install the required dependencies:
+
+Bash
+pip install -r requirements.txt
+3. Run the Streamlit app:
+
+Bash
+streamlit run app.py
+
+
+👨‍💻 Author
+Sahil Kasana
+Second-Year Computer Science Student & Data Science Enthusiast
+Passionate about building end-to-end Machine Learning pipelines, Generative AI, and solving real-world business problems through data.
+
+GitHub: @sagurjar027
+
