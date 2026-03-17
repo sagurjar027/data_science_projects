@@ -6,15 +6,28 @@ import joblib
 working_dir = os.path.dirname(os.path.abspath(__file__))
 st.set_page_config(page_title="Churn Prediction Pro", layout="centered")
 st.title("📞 Customer Churn Prediction System")
+
 # -------------------- LOAD ASSETS --------------------
 @st.cache_resource
 def load_assets():
     try:
         # Loading Models
         rf_model = joblib.load(f"{working_dir}/rf_model.joblib")
+        
+        # --- Scikit-learn Version Mismatch Patch ---
+        try:
+            for estimator in rf_model.estimators_:
+                if not hasattr(estimator, 'monotonic_cst'):
+                    estimator.monotonic_cst = None
+        except AttributeError:
+            pass
+        # -------------------------------------------
+        
         xgb_model = joblib.load(f"{working_dir}/xgb_model.joblib")
         scaler = joblib.load(f"{working_dir}/scaler.joblib")
+        
         return rf_model, xgb_model, scaler
+    
     except Exception as e:
         st.error(f"Error loading files: {e}")
         return None, None, None
